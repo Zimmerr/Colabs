@@ -7,7 +7,7 @@ Integrantes do Projeto:\
 -Anderson Pereira Barbosa\
 -Fernando Gardin Casarotto\
 -Luis Henrique Zimmermann\
--Piero Acosta Desenzi\
+-Piero Acosta Desenzi
 
-## Proposta\
+## Proposta
     Criação de um sistema de gerenciamento de projetos. Nele, existem os conceitos de "usuário" e "projeto". Usuários poderão ser membros de projetos, numa relação N para N. Cada projeto será uma rede de componentes que poderão ser manipulados por usuários, seguindo características de hierarquia particulares a cada projeto. Esses componentes incluem agendas, centrais de mensagens análogas a fórums, histórico de ações, etc.
