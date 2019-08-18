@@ -4,7 +4,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/002e6204c3ece91011a9/maintainability)](https://codeclimate.com/github/Zimmerr/ProjetoESI/maintainability)
 
 ## Link para o Heroku
-https://dashboard.heroku.com/apps/projetoesi
+https://projetoesi.herokuapp.com
 
 ## Integrantes do Projeto
 -Anderson Pereira Barbosa\
