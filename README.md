@@ -1,13 +1,16 @@
 # ProjetoESI
 
-[![Build Status](https://travis-ci.com/Zimmerr/ProjetoESI.svg?branch=master)](https://travis-ci.com/Zimmerr/ProjetoESI)
-[![Maintainability](https://api.codeclimate.com/v1/badges/002e6204c3ece91011a9/maintainability)](https://codeclimate.com/github/Zimmerr/ProjetoESI/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/002e6204c3ece91011a9/maintainability)](https://codeclimate.com/github/Zimmerr/ProjetoESI/maintainability)\
+[![Build Status](https://travis-ci.com/Zimmerr/ProjetoESI.svg?branch=master)](https://travis-ci.com/Zimmerr/ProjetoESI)\
 
-Integrantes do Projeto:\
+## Link para o Heroku
+https://dashboard.heroku.com/apps/projetoesi
+
+## Integrantes do Projeto
 -Anderson Pereira Barbosa\
 -Fernando Gardin Casarotto\
 -Luis Henrique Zimmermann\
 -Piero Acosta Desenzi\
 
-## Proposta\
-    Criação de um sistema de gerenciamento de projetos. Nele, existem os conceitos de "usuário" e "projeto". Usuários poderão ser membros de projetos, numa relação N para N. Cada projeto será uma rede de componentes que poderão ser manipulados por usuários, seguindo características de hierarquia particulares a cada projeto. Esses componentes incluem agendas, centrais de mensagens análogas a fórums, histórico de ações, etc.
+## Proposta
+    Criação de um sistema de gerenciamento de projetos. Neste sistema, o usuário poderá criar e gerenciar um\ ou mais projetos. Ao criar um projeto, o usuário poderá divitir o projeto em etapas, definir prazos e\ atribuir, mover ou retirar pessoas de cada etapa. Será possível gerenciar mais de um projeto por vez, e o\ sistema irá avisar se os usuários possuem um ou mais projetos/etapas que se sobrepõem para que o gerente\ possa melhor gerenciar sua equipe.
