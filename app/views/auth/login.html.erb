@@ -1,0 +1,27 @@
+<% provide(:title, "Login") %>
+<h1 class="text-center">Login</h1>
+
+<div class="row login-box shadow">
+  <div class="login-box-body border">
+    <%# TODO: O "login" na linha abaixo é um placeholder, colocar a rota correta quando a função de login for implementada %>
+    <%= form_for(:session, url: "login") do |f| %>
+
+    <div class="form-group">
+      <%#= f.label :email %>
+      <%= f.email_field :email, class: 'form-control', placeholder: "Email" %>
+    </div>
+
+    <div class="form-group">
+      <%#= f.label :password %>
+      <%= f.password_field :password, class: 'form-control', placeholder:"Senha" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "Login", class: "btn btn-primary btn-block" %>
+    </div>
+    <% end %>
+
+    <%# TODO: O "Cadastro" na linha abaixo é um placeholder, colocar a rota correta quando a página de cadastro for criada %>
+    <p class="text-center">Novo usuário? <%= link_to "Cadastre-se agora!", "cadastrar_usuario" %></p>
+  </div>
+</div>
