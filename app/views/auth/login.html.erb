@@ -1,8 +1,16 @@
 <% provide(:title, "Login") %>
-<h1 class="text-center">Login</h1>
+<body style="background-color: #d7fcf2">
+<div class="row">
+  <div class="login-box-body border" style="background-color: #d7fcf2">
+    <img src="assets/colabs3.jpeg" class="img-responsive center-block">
+  </div>
+</div>
 
 <div class="row login-box shadow">
   <div class="login-box-body border">
+
+    <h1 class="text-center">Login</h1>
+  
     <%# TODO: O "login" na linha abaixo é um placeholder, colocar a rota correta quando a função de login for implementada %>
     <%= form_for(:session, url: "login") do |f| %>
 
@@ -21,7 +29,7 @@
     </div>
     <% end %>
 
-    <%# TODO: O "Cadastro" na linha abaixo é um placeholder, colocar a rota correta quando a página de cadastro for criada %>
     <p class="text-center">Novo usuário? <%= link_to "Cadastre-se agora!", "cadastrar_usuario" %></p>
   </div>
 </div>
+</body>
