@@ -9,9 +9,10 @@ class UsersController < ApplicationController
     def create
 	@user = User.new(article_params)
 	if @user.save
-		redirect_to '/'
+    flash[:success] = 'Usuário cadastrado com sucesso!'
+		redirect_to root_path
 	else
-		flash[:notice] = "Oops, houve um erro. Verifique sua senha e email."
+		flash[:notice] = "Oops! Houve um erro. Verifique seus dados novamente."
 		redirect_to '/cadastrar_usuario'
 	end
     end
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
     private
 	#impedir transmissao de parametros maliciosos - strong params
     	def article_params
-		params.require(:user).permit(:name, :email, :password, :password_confirmation)
+		params.require(:user).permit(:nome, :email, :password, :password_confirmation)
 	end
 
 end

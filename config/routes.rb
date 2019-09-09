@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   root to: "auth#login"
   get "cadastrar_usuario", to: "users#new"
+  get "teste", to: "inicial#index"
+  get 'enter', to: 'auth#new'
+  post 'enter', to: 'auth#create'
 
   resources :users, only: [:new, :create]
 
