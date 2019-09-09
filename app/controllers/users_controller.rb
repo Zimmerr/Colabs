@@ -5,7 +5,6 @@ class UsersController < ApplicationController
     end
 
     #TODO - Teste unitario
-    #TODO - Fazer um check de consistencia se ja existe aquele usuario(email) no bd
     def create
 	     @user = User.new(article_params)
 	     if @user.save
@@ -17,12 +16,11 @@ class UsersController < ApplicationController
 	     end
     end
 
-
     #reutilizar nas outras acoes CRUD
     private
 	#impedir transmissao de parametros maliciosos - strong params
     	def article_params
-		      params.require(:user).permit(:nome, :email, :password, :password_confirmation)
+		    params.require(:user).permit(:nome, :email, :password, :password_confirmation)
 	    end
 
 end
