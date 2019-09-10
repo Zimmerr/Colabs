@@ -9,6 +9,7 @@ https://projetocolabs.herokuapp.com/
 ## Integrantes do Projeto
 -Anderson Pereira Barbosa\
 -Fernando Gardin Casarotto\
+-Gabriel Feitosa Rato\
 -Luis Henrique Zimmermann\
 -Piero Acosta Desenzi
 
