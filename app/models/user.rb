@@ -8,4 +8,6 @@ class User < ApplicationRecord
 	# This validation with the 'uniqueness' parameter will do the trick for preventing duplication
 	validates :email, presence: true, uniqueness: true
 
+	has_and_belongs_to_many :projects
+
 end
