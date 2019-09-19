@@ -1,10 +1,10 @@
 <body style="background-color: #d7fcf2">
-<div class="row">
+<div class="">
     <div>
         <h1 class="text-center" >Criação de usuário</h1>
     </div>
 
-    <div class="col-md-6 col-md-offset-3 col-xs-12">
+    <div class="col-md-6 offset-md-3 col-xs-12">
         <%= form_for @user do |f| %>
 
             <div class="form-group">
@@ -27,7 +27,7 @@
                 <%= f.password_field :password_confirmation, class:"form-control" %>
             </div>
 
-            <%=f.submit "Entrar no Colabs!", class:"col-md-6 col-md-offset-3 col-xs-12 btn btn-primary" %>
+            <%=f.submit "Entrar no Colabs!", class:"col-md-6 offset-md-3 col-xs-12 btn btn-primary" %>
 
         <% end %>
     </div>

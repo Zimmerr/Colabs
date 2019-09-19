@@ -7,8 +7,10 @@ ruby '2.6.3'
 gem 'rails', '~> 5.2.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
-# Twitter Bootstrap
-gem 'bootstrap-sass', '~> 3.3.6' 
+# Bootstrap 4
+gem 'bootstrap', '~> 4.3.1'
+# JQuery pois o bootstrap precisa
+gem 'jquery-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

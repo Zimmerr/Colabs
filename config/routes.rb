@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "auth#login"
   get 'landing', to: 'auth#login'
   get "cadastrar_usuario", to: "users#new"
-  get "teste", to: "inicial#index"
+  get "index", to: "inicial#index"
   get 'enter', to: 'auth#new'
   post 'enter', to: 'auth#create'
 
