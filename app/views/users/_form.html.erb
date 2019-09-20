@@ -1,0 +1,42 @@
+<body >
+<div class="">
+    <div>
+        <h1 class="text-center" ><%= texto_descritivo %></h1>
+    </div>
+
+    <div class="col-md-6 offset-md-3 col-xs-12">
+        <%= form_for @user do |f| %>
+
+            <div class="form-group">
+                <%= f.label :Nome %>
+                <%= f.text_field :nome, class:"form-control" %>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :Email %>
+                <%= f.email_field :email, class:"form-control" %>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :Senha %>
+                <%= f.password_field :password, class:"form-control" %>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :"Confirmar senha" %>
+                <%= f.password_field :password_confirmation, class:"form-control" %>
+            </div>
+
+            <%=f.submit texto_da_acao, class:"col-md-6 offset-md-3 col-xs-12 btn btn-primary" %>
+
+        <% end %>
+    </div>
+    <div>
+        <% @user.errors.full_messages.each do |msg| %>
+            <div class="alert alert-danger" role="alert">
+                <%= msg %>
+            </div>
+        <% end %>
+    </div>
+</div>
+</body>

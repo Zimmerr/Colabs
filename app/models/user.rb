@@ -6,6 +6,6 @@ class User < ApplicationRecord
 																		format: { with: /[a-z]+/i }
 	validates :password, confirmation: true, length: { minimum: 6 }
 	# This validation with the 'uniqueness' parameter will do the trick for preventing duplication
-	validates :email, presence: true, uniqueness: true
-
+	validates :email, presence: true
+	validates :email, uniqueness: true, :on => :create
 end
