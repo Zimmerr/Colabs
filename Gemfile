@@ -8,9 +8,13 @@ gem 'rails', '~> 5.2.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Twitter Bootstrap
-gem 'bootstrap-sass', '~> 3.3.6' 
+gem 'bootstrap-sass', '~> 3.3.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# Popper
+gem 'popper_js', '~> 1.14.5'
+# Using Jquery
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
