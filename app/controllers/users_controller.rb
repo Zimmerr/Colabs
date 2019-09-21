@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
     def new
-        @user = User.new
+      redirect_to index_path if user_signed_in?
+      @user = User.new
     end
 
     #TODO - Teste unitario
