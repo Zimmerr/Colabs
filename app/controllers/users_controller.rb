@@ -3,8 +3,9 @@ class UsersController < ApplicationController
 	before_action :set_user, only: [:edit, :update]
 
     def new
-        @user = User.new
-	end
+      redirect_to index_path if user_signed_in?
+      @user = User.new
+    end
 	
 	def edit
 
