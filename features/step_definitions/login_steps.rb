@@ -2,9 +2,14 @@ Given (/^I am on the homepage$/) do
   visit "landing"
 end
 
-When (/^I fill the login form with (.*) as email and (.*) as password$/) do |email, password|
-  fill_in "Email", :with => email
-  fill_in "Senha", :with => password
+Given (/^There is an registered user$/) do
+  u = User.new(:nome => "user", :email => "user@gmail.com", :password => "123456", :password_confirmation => "123456")
+  u.save
+end 
+
+When (/^I fill the login form with login information$/) do
+  fill_in "Email", :with => "user@gmail.com"
+  fill_in "Senha", :with => "123456"
 end
 
 When (/^I click the Login button$/) do

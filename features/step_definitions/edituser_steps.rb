@@ -18,7 +18,7 @@ Given (/^I am on the Edit User page$/) do
     User.count.should == @actual_count
   end
   
-  Then (/^I should see a (.*) confirmation message$/) do |message|
-    expect(page).to have_content(message)
+  Then (/^I should see a confirmation message$/) do
+    expect(page).to have_content("Usuário atualizado com sucesso!")
   end
   
