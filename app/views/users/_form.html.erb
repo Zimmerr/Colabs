@@ -1,5 +1,15 @@
 <body >
 <div class="">
+    <% if flash[:notice] %>
+        <div class="alert alert-warning" role="alert">
+            <%= flash[:notice] %>
+        </div>
+    <% end %>
+    <% if flash[:success] %>
+        <div class="alert alert-success" role="alert">
+            <%= flash[:success] %>
+        </div>
+    <% end %>
     <div>
         <h1 class="text-center" ><%= texto_descritivo %></h1>
     </div>
@@ -31,12 +41,6 @@
 
         <% end %>
     </div>
-    <div>
-        <% @user.errors.full_messages.each do |msg| %>
-            <div class="alert alert-danger" role="alert">
-                <%= msg %>
-            </div>
-        <% end %>
-    </div>
+    
 </div>
 </body>

@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 			redirect_to editar_usuario_url
 		else
 			flash[:notice] = "Oops! Houve um erro. Verifique seus dados novamente."
-			#redirect_to '/cadastrar_usuario'
+			redirect_to editar_usuario_url
 		end
    end
 

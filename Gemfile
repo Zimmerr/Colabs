@@ -43,7 +43,7 @@ group :development, :test do
   # rspec-rails; necessário para rodar o rake spec
   gem 'rspec-rails', '~> 3.8'
   # Cucumber-rails; necessário para rodar o rake features
-  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails'
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   # Use sqlite3 as the database for Test Record

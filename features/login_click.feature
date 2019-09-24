@@ -5,6 +5,6 @@ Feature: Login Click
 
   Scenario: User clicks the login button
     Given I am on the homepage
-    When I fill the login form with testes.usuarios@gmail.com as email and testesusuarios as password
+    When I fill the login form with "dummy@gmail.com" as email and "dummy123" as password
     And I click the Login button
     Then I should see the initial user page
