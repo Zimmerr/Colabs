@@ -1,7 +1,22 @@
 <nav class="navbar navbar-expand-lg" role="navigation" style="background-color: #3b7d6b">
   <a class="navbar-brand" href="/">
-  <img src="assets/colabs1.jpeg" width="30" height="30" class="d-inline-block align-top" alt="">
-    
+    <img src="assets/colabs1.jpeg" width="30" height="30" class="d-inline-block align-top" alt="">
+
   </a>
 
+    <%if user_signed_in? %>
+      <div class="dropdown pull-left">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Menu
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Meus Projetos</a>
+          <a class="dropdown-item" href="#">Minha Conta</a>
+          <%= link_to 'Sair', logout_path, method: :delete %>
+      </div>
+    <% else %>
+      <%# TODO: colocar um botão de login aqui %>
+    <% end %>
+
+  </div>
 </nav>

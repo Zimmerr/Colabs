@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/Zimmerr/Colabs.svg?branch=master)](https://travis-ci.com/Zimmerr/Colabs)\
 [![Maintainability](https://api.codeclimate.com/v1/badges/002e6204c3ece91011a9/maintainability)](https://codeclimate.com/github/Zimmerr/ProjetoESI/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/Zimmerr/ProjetoESI/test_coverage)
 
 ## Link para o Heroku
 https://projetocolabs.herokuapp.com/

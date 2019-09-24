@@ -9,7 +9,7 @@
       <h3 class="text-center">Bem vindo ao Colabs, <%= current_user.nome %>!</h1>
 
       <p class="text-center">Em breve, voltaremos com mais conteúdo.</p>
-      <p class="text-center">Você está logado como <%= current_user.email%>. <%= link_to "Deseja sair?", "landing" %></p>
+      <p class="text-center">Você está logado como <%= current_user.email%>. <%= link_to "Deseja sair?", logout_path, method: :delete %></p>
 
     </div>
   </div>

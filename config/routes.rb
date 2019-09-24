@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   get "index", to: "inicial#index"
   get 'enter', to: 'auth#new'
   post 'enter', to: 'auth#create'
+  delete 'logout', to: 'auth#destroy'
 
   resources :users, only: [:new, :create]
+
+  resources :auth, only: [:login, :create, :destroy]
 
 end
