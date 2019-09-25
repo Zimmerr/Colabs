@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root to: "auth#login"
   get 'landing', to: 'auth#login'
+  get "meus_projetos", to: "projects#index"
   get "cadastrar_usuario", to: "users#new"
   get "editar_usuario", to: "users#edit"
   get "index", to: "inicial#index"
@@ -14,4 +15,5 @@ Rails.application.routes.draw do
 
   resources :auth, only: [:login, :create, :destroy]
 
+  resources :projects
 end

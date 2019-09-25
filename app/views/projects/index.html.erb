@@ -1,0 +1,13 @@
+<div class="text-center">
+    <%= link_to 'Novo projeto', new_project_url,  remote:  true, class: "btn btn-success" %>
+    <ul>
+	<% @projects.each do |project| %>
+		<li>
+			<%= project.id %> |
+			<%= project.name %> |
+			<%= project.desc %>
+			<%= link_to '', project_url(project), method: 'delete', class: "btn btn-danger glyphicon glyphicon-remove" %>
+		</li>
+	<% end %>
+    </ul>
+</div>
