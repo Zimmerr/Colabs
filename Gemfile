@@ -11,8 +11,6 @@ gem 'puma', '~> 3.11'
 gem 'bootstrap', '~> 4.3.1'
 # JQuery pois o bootstrap precisa
 gem 'jquery-rails'
-# Twitter Bootstrap
-gem 'bootstrap-sass', '~> 3.3.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Popper
