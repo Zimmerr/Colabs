@@ -14,7 +14,8 @@ class ProjectsController < ApplicationController
 	end
 
 	def create
-	     @project = Project.new(save_project_params)
+		 @project = Project.new(save_project_params)
+		 @project.users << current_user
 	     if @project.save
 		     redirect_to '/meus_projetos'
 	     else
