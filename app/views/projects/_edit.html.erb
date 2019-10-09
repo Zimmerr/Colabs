@@ -1,11 +1,18 @@
-<div id="contact-modal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title">Novo Projeto</h4>
+<div class="">
+    <% if flash[:notice] %>
+        <div class="alert alert-warning" role="alert">
+            <%= flash[:notice] %>
+        </div>
+    <% end %>
+    <% if flash[:success] %>
+        <div class="alert alert-success" role="alert">
+            <%= flash[:success] %>
+        </div>
+    <% end %>
+    <div>
+	<h4 class="modal-title"><%= texto_descritivo %> </h4>
       </div>
-      <%= form_for @project, remote: true do |f| %>
+      <%= form_for @project do |f| %>
       <div class="modal-body">
         <div class="form-group">
           <%= f.text_field :name, class: 'form-control input-lg', placeholder: "Nome do projeto" %>
@@ -16,9 +23,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-        <%= f.submit class: 'btn btn-primary' %>
+        <%= f.submit texto_da_acao, class: 'btn btn-primary' %>
       </div>
       <% end %>
-    </div>
-  </div>
-</div>
+

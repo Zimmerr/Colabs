@@ -1,3 +1,11 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ul { list-style-type: none; overflow: hidden; width:200px; }
+ul li { float:left; width: 100px; }
+ul li a { display: block; padding: 10px; width:80px; }
+ul li a:hover { background: black; }
+
+body{
+    background-color: #d7fcf2
+}

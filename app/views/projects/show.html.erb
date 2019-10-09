@@ -1,11 +1,7 @@
-<div id="contact-modal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title">Novo Projeto</h4>
+        <h4 class="modal-title">Novasdfdsfo Projeto</h4>
       </div>
-      <%= form_for @project, remote: true do |f| %>
+      <%= form_for @project , local: true do |f| %>
       <div class="modal-body">
         <div class="form-group">
           <%= f.text_field :name, class: 'form-control input-lg', placeholder: "Nome do projeto" %>
@@ -19,6 +15,3 @@
         <%= f.submit class: 'btn btn-primary' %>
       </div>
       <% end %>
-    </div>
-  </div>
-</div>
