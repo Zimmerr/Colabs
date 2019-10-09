@@ -3,5 +3,5 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+projects = Project.create([{ name: 'P1', desc: 'teste' }, { name: 'P2' }])
 #   Character.create(name: 'Luke', movie: movies.first)

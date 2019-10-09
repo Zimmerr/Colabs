@@ -1,12 +1,14 @@
-<div class="text-center">
+<div class="text-center" id="meus_projetos">
     <%= link_to 'Novo projeto', new_project_url,  remote:  true, class: "btn btn-success" %>
-    <ul>
+    <br>
+    <br>
+    <ul class="list-group ">
 	<% @projects.each do |project| %>
-		<li>
-			<%= project.id %> |
+		<li class="float-left, background-color: transparent !important">
 			<%= project.name %> |
 			<%= project.desc %>
-			<%= link_to '', project_url(project), method: 'delete', class: "btn btn-danger glyphicon glyphicon-remove" %>
+			<%= link_to  '', edit_project_path(project),  class: "btn  btn-info fa fa-edit" %>
+			<%= link_to '', project_url(project), method: 'delete', class: "btn btn-danger fa fa-times" %>
 		</li>
 	<% end %>
     </ul>
