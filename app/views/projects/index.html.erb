@@ -3,13 +3,14 @@
     <br>
     <br>
     <ul class="list-group ">
-	<% @projects.each do |project| %>
-		<li class="float-left, background-color: transparent !important">
-			<%= project.name %> |
-			<%= project.desc %>
-			<%= link_to  '', edit_project_path(project),  class: "btn  btn-info fa fa-edit" %>
-			<%= link_to '', project_url(project), method: 'delete', class: "btn btn-danger fa fa-times" %>
-		</li>
-	<% end %>
+    	<% @projects.each do |project| %>
+		    <li class="float-left, background-color: transparent !important userbox">
+			    <%= project.name %> |
+			    <%= project.desc %> |
+          <%= link_to '', 'project_tasks', class: "btn btn-info fa fa-tasks" %>
+			    <%= link_to  '', edit_project_path(project),  class: "btn  btn-info fa fa-edit" %>
+			    <%= link_to '', project_url(project), method: 'delete', class: "btn btn-danger fa fa-times" %>
+		    </li>
+	    <% end %>
     </ul>
 </div>
