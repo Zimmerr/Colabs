@@ -10,7 +10,7 @@ class User < ApplicationRecord
 	validates :email, presence: true
 	validates :email, uniqueness: true, :on => :create
 
-	has_many: project_users
-	has_many: projects, :through => project_users
+	has_many :project_users
+	has_many :projects, :through => :project_users
 
 end
