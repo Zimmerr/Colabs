@@ -46,6 +46,10 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # rspec-rails; necessário para rodar o rake spec
   gem 'rspec-rails', '~> 3.8'
+  # factory-bot
+  gem 'factory_bot_rails'
+  # para usar o assign no rspec
+  gem 'rails-controller-testing'
   # Cucumber-rails; necessário para rodar o rake features
   gem 'cucumber-rails'
   # database_cleaner is not required, but highly recommended

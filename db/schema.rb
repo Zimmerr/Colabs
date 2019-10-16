@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_11_140931) do
+ActiveRecord::Schema.define(version: 2019_10_12_153838) do
+
+  create_table "lists", force: :cascade do |t|
+    t.string "name"
+    t.string "desc"
+    t.integer "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_lists_on_project_id"
+  end
 
   create_table "project_users", force: :cascade do |t|
     t.integer "project_id"
