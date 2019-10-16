@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   post 'enter', to: 'auth#create'
   delete 'logout', to: 'auth#destroy'
 
+  get 'listas_projeto', to: "lists#index"
+  post 'listas_projeto', to: "lists#create"
+
   resources :users, only: [:new, :create, :update]
 
   resources :auth, only: [:login, :create, :destroy]
