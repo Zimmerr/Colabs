@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   post 'enter', to: 'auth#create'
   delete 'logout', to: 'auth#destroy'
 
-  get 'listas_projeto', to: "lists#index"
-  post 'listas_projeto', to: "lists#create"
+  get 'listas_projeto/:project_id', to: "lists#index", as: 'listas_projeto'
+  post 'listas_projeto/:project_id', to: "lists#create"
 
   resources :users, only: [:new, :create, :update]
 

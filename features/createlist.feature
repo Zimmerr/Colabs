@@ -4,8 +4,11 @@ Feature: Insert Lists
     Eu quero criar categorias de tarefas customizadas dentro de um projeto
 
     Scenario: Inserting first List
-        Given I am on the page of my created project
-        Given I go to the Edit Lists page
+        #Given I am on the page of my created project
+        Given I login successfully
+        And There is a created project
+        And I go to the homepage
+        Then I go to the Edit Lists page
         And My project have X lists
         When I should fill the form with name "Fazendo" and description "Lista de tarefas sendo executadas no momento"
         Then I should click the Criar Lista button

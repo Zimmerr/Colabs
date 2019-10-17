@@ -8,9 +8,7 @@ class ListsController < ApplicationController
 	
 	def create
 		@list = List.new(list_params)
-		#@list.project_id = @id_proj
-		puts @list
-		puts @list.project_id
+		@list.project_id = params[:project_id]
 	     if @list.save
          	flash[:success] = 'Lista cadastrada com sucesso!'
 		     redirect_to listas_projeto_url(:project_id => @list.project_id)
@@ -22,6 +20,6 @@ class ListsController < ApplicationController
 	
 	private
     	def list_params
-		    params.require(:list).permit(:name, :desc, :project_id)
+		    params.require(:list).permit(:name, :desc)
         end
 end

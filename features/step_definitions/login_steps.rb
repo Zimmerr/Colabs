@@ -3,8 +3,8 @@ Given (/^I am on the homepage$/) do
 end
 
 Given (/^There is an registered user$/) do
-  u = User.new(:nome => "user", :email => "user@gmail.com", :password => "123456", :password_confirmation => "123456")
-  u.save
+  @current_user = User.new(:nome => "user", :email => "user@gmail.com", :password => "123456", :password_confirmation => "123456")
+  @current_user.save
 end 
 
 When (/^I fill the login form with login information$/) do

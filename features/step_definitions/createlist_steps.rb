@@ -7,16 +7,21 @@ Given (/^I am on the page of my created project$/) do
       }
 end 
 
+  Given("There is a created project") do
+    @project = build(:project)
+    @project.users << @current_user
+    @project.save
+  end
+
   When("I go to the Edit Lists page") do
     find(:xpath, ".//a[i[contains(@class, 'fa-list')]]").click
   end
 
   Given("My project have X lists") do
-    @lists_count = Project.first.lists.count
+    @lists_count = @project.lists.count
   end
   
   When("I should fill the form with name {string} and description {string}") do |name, description|
-    puts URI.parse(current_url).path
     fill_in "list_name", :with => name
     fill_in "list_desc", :with => description
   end
@@ -31,5 +36,5 @@ end
   end
   
   Then("My project should have X+1 lists") do
-    Project.first.lists.count.should == @lists_count + 1
+    @project.lists.count.should == @lists_count + 1
   end
