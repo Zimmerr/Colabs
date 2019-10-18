@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get "editar_usuario", to: "users#edit"
   get "index", to: "inicial#index"
   get 'enter', to: 'auth#new'
-  get "projeto_usuario", to: "projectusers#index"
   post 'enter', to: 'auth#create'
   delete 'logout', to: 'auth#destroy'
 
@@ -18,4 +17,6 @@ Rails.application.routes.draw do
   resources :auth, only: [:login, :create, :destroy]
 
   resources :projects
+
+  resources :project_users
 end

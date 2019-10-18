@@ -1,0 +1,13 @@
+<div class="text-center" id="add_membro">
+    <br>
+    <br>
+    <ul class="list-group ">
+    	<% @tmembros.each do |m| %>
+		    <li class="float-left, background-color: transparent !important userbox">
+			    <%= m.nome %> |
+          <%= link_to 'ADD', inserir_project_user_path(m), class: "btn btn-info fa fa-tasks" %>
+          #acho que eu preciso criar um novo controller
+		    </li>
+	    <% end %>
+    </ul>
+</div>

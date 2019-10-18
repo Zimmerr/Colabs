@@ -1,0 +1,10 @@
+<div class="text-center" id="membros_projetosos">
+    <br>
+    <ul class="list-group ">
+    	<% @membros.each do |m| %>
+		    <li class="float-left, background-color: transparent !important userbox">
+			    <%= m.nome %>
+	    <% end %>
+	</ul>
+	<%= link_to 'Novo membro', new_project_user_path(@project) %>
+</div>
