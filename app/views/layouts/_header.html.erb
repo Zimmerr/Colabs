@@ -3,14 +3,15 @@
   <img src="/assets/colabs1.jpeg" width="30" height="30" class="d-inline-block align-top" alt="">
 
   </a>
- <form class="form-inline">
+<%= form_tag index_url, method: :get, class:"form-inline" do |f|  %>
 	 <div class="input-group">
-		 <input type="text" class="form-control" placeholder="Encontre seus recursos">
-		 <div class="input-group-append"><button class="btn btn-dark" type="button"><i class="fa fa-search"></i>
-			 </button>
-		 </div>
+		 <%= text_field_tag :search_term, params[:search_term], class:"form-control" %>
 	 </div>
- </form>
+	<div class="input-group-append">
+		<%= submit_tag "search", name: nil, class:"btn btn-dark" %>
+	</div>
+
+<% end %>
 
     <%if user_signed_in? %>
   <div>
