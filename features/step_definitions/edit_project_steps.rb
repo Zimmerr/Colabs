@@ -1,5 +1,7 @@
 Given (/^I am on the Edit Project page$/) do
-  visit 'projects/1/edit'
+  @current_project = Project.new(:name => "Projeto", :desc => "Descricao")
+  @current_project.save
+  visit edit_project_path(@current_project)
 end
 
 When (/^I fill the edit project form with (.*) as name and (.*) as desc and (.*) as id$/) do |name, description, id|

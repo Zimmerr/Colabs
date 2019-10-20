@@ -4,5 +4,5 @@
 # Examples:
 #
 projects = Project.create([{ name: 'Projeto Teste', desc: 'teste' }, { name: 'P2' }])
-pj = ProjectUser.create([{ project_id: 0, user_id: 0 }])
+pj = ProjectUser.create([{ project_id: 1, user_id: 1 }])
 #   Character.create(name: 'Luke', movie: movies.first)

@@ -1,10 +1,6 @@
 class ProjectsController < ApplicationController
 	def index
-        if (params[:search_term])
-            @projects = Project.search(search_term)
-        else
-            @projects = Project.first
-        end
+        @projects = Project.all
 	end
 
 	def destroy
