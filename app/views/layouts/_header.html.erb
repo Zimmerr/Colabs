@@ -3,6 +3,8 @@
   <img src="/assets/colabs1.jpeg" width="30" height="30" class="d-inline-block align-top" alt="">
 
   </a>
+
+    <%if user_signed_in? %>
 <%= form_tag index_url, method: :get, class:"form-inline" do |f|  %>
 	 <div class="input-group">
 		 <%= text_field_tag :search_term, params[:search_term], class:"form-control" %>
@@ -12,8 +14,6 @@
 	</div>
 
 <% end %>
-
-    <%if user_signed_in? %>
   <div>
       <div class="dropdown">
         <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -1,20 +1,19 @@
-Feature: Search a project resource
+Feature: Crate project
   As a user
-  In order to quick find my projects
-  I want to be able to edit it
+  In order to organize myself and teamates
+  I want to create projects
 
 #Isso aqui faz o login de acordo com o fixedLogin_steps.rb
 Background: im logged in
   Given I login successfully
 
 @javascript
-Scenario: search for a valid project
-  Given I am on first page
+Scenario: created a project with no problems
+  Given I am on the main page
   When click on the 'clicando aqui!' link
   And click on the 'Novo projeto' button
   And I fill the create project form with "Meu prjeto" as name and "Minha Descricao" as desc
   And click on the 'Create Project' button
-  And click on the 'Buscar' button
-  And I fill the search project form with "" as search_term
-  Then I should be able to see it
+  Then I should have at least one project
+  And I should see my projects page
 
