@@ -1,6 +1,13 @@
 class ProjectUsersController < ApplicationController
 
+    project
 
+    def checkLogin
+        session['projectid'] = project.id
+        puts '----------'
+        puts session['projectid']
+        puts '----------'
+    end
 
     def edit
         @project = Project.find(params[:id])
@@ -24,7 +31,8 @@ class ProjectUsersController < ApplicationController
     def create
         puts '-----------------------------------------------------------'
         @user = User.find(params[:id])
-        @pu = ProjectUser.create(:user_id => params[:id], :project_id => 4)
+
+        @pu = ProjectUser.create(:user_id => params[:id], :project_id => session['projectid'])
         #redirect_to index_path
     end
 

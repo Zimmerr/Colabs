@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "editar_usuario", to: "users#edit"
   get "index", to: "inicial#index"
   get 'enter', to: 'auth#new'
-  post "addprojectuser", to: "project_users#create", as: "adduser"
+  post "/addprojectuser/:id", to: "project_users#create", as: "adduser"
   post 'enter', to: 'auth#create'
   delete 'logout', to: 'auth#destroy'
 
