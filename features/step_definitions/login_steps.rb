@@ -5,7 +5,7 @@ end
 Given (/^There is an registered user$/) do
   @current_user = User.new(:nome => "user", :email => "user@gmail.com", :password => "123456", :password_confirmation => "123456")
   @current_user.save
-end 
+end
 
 When (/^I fill the login form with login information$/) do
   fill_in "Email", :with => "user@gmail.com"
