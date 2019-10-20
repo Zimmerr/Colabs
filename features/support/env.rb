@@ -6,6 +6,7 @@
 
 require 'cucumber/rails'
 require 'capybara'
+require 'selenium-webdriver'
 
 
 # frozen_string_literal: true
@@ -31,7 +32,6 @@ require 'capybara'
 # recommended as it will mask a lot of errors for you!
 #
 # setting a driver to work with js, like modals we have in create_project
-Capybara.javascript_driver = :selenium
 
 ActionController::Base.allow_rescue = false
 
@@ -57,6 +57,10 @@ end
 #     DatabaseCleaner.strategy = :transaction
 #   end
 #
+Capybara.register_driver :chrome do |app|
+    options = Selenium::WebDriver::Chrome::Options.new(args: %w[no-sandbox headless disable-gpu])
+    Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+end
 
 # Possible values are :truncation and :transaction
 # The :transaction strategy is faster, but might give you threading problems.
