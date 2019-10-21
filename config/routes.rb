@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "index", to: "inicial#index"
   get 'enter', to: 'auth#new'
   post "/addprojectuser/:id", to: "project_users#create", as: "adduser"
+  get "/rmprojectuser/:id", to: "project_users#remove", as: "rmuser"
   post 'enter', to: 'auth#create'
   delete 'logout', to: 'auth#destroy'
 

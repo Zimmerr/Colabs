@@ -1,22 +1,24 @@
 class ProjectUsersController < ApplicationController
 
-    project
-
-    def checkLogin
-        session['projectid'] = project.id
-        puts '----------'
-        puts session['projectid']
-        puts '----------'
-    end
-
+    '''
     def edit
         @project = Project.find(params[:id])
+        session[:projectid] = @project.id
         @membros = User.joins(:projects).where(projects: {id: params[:id]})
     end
-    
-    def set_project
-        project = Project.find(params[:id])
+    '''
+    def edit
+        session[:projectid] = params[:id]
+        @membros = User.joins(:projects).where(projects: {id: params[:id]})
     end
+    '''
+    def set_project
+        @project = Project.find(params[:id])
+        session[:projectid] = @project.id
+        puts /////////////////////////set_project//////////////////////////////////////////
+        puts session[:projectid]
+    end
+    '''
 
     def new
         @tmembros = User.all
@@ -31,9 +33,12 @@ class ProjectUsersController < ApplicationController
     def create
         puts '-----------------------------------------------------------'
         @user = User.find(params[:id])
-
-        @pu = ProjectUser.create(:user_id => params[:id], :project_id => session['projectid'])
-        #redirect_to index_path
+        @pu = ProjectUser.create(:user_id => params[:id], :project_id => session[:projectid])
+        redirect_to new_project_user_path(session[:projectid])
     end
 
+    def remove
+        ProjectUser.where(:user_id => params[:id], :project_id => session[:projectid]).first.destroy
+        redirect_to edit_project_user_path(session[:projectid])
+    end
 end
