@@ -1,0 +1,71 @@
+<body >
+  <div>
+    <img src="/assets/colabs3.jpeg" class="img-responsive mx-auto d-block">
+  </div>
+  <div class="ui">
+	<nav class="navbar app" style="height: 26px;">Task Board</nav>
+	<nav class="navbar board" id="projectname"><%= @project.name %></nav>
+	<div class="lists">
+		<div class="list">
+			<header id="hd1">Ideas</header>
+			<ul>
+        <% @tasks.each do |task| %>
+  		    <li>
+  			    <h6><em><%= task.name %></em></h6>
+            <br>
+  			    <%= task.desc %>
+  		    </li>
+  	    <% end %>
+			</ul>
+			<footer><%= link_to 'Add a card...', new_task_path(:project_id => @project.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}  %></footer>
+		</div>
+		<div class="list">
+			<header id="hd2">Currently Researching</header>
+			<ul>
+
+			</ul>
+			<footer>Add a card...</footer>
+		</div>
+		<div class="list">
+			<header id="hd3">Backlog</header>
+			<ul>
+
+			</ul>
+			<footer>Add a card...</footer>
+		</div>
+    <div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content"></div>
+      </div>
+    </div>
+		<div class="list">
+			<header id="hd4">In Progress</header>
+			<ul>
+
+			</ul>
+			<footer>Add a card...</footer>
+		</div>
+		<div class="list">
+			<header id="hd5">Client Pendence</header>
+			<ul>
+
+			</ul>
+			<footer>Add a card...</footer>
+		</div>
+		<div class="list">
+			<header id="hd6">QA</header>
+			<ul>
+
+			</ul>
+			<footer>Add a card...</footer>
+		</div>
+		<div class="list">
+			<header id="hd7">Done</header>
+			<ul>
+
+			</ul>
+			<footer>Add a card...</footer>
+		</div>
+	</div>
+</div>
+</body>

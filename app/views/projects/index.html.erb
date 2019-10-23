@@ -7,7 +7,7 @@
 		    <li class="float-left, background-color: transparent !important userbox">
 			    <%= project.name %> |
 			    <%= project.desc %> |
-          <%= link_to '', 'project_tasks', class: "btn btn-info fa fa-tasks" %>
+          <%= link_to '', project_task_path(:project_id => project.id), class: "btn btn-info fa fa-tasks" %>
 			    <%= link_to  '', edit_project_path(project),  class: "btn  btn-info fa fa-edit" %>
 			    <%= link_to '', project_url(project), method: 'delete', class: "btn btn-danger fa fa-times" %>
 		    </li>
