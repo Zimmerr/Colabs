@@ -14,15 +14,5 @@
 </div>
 <div class="modal-footer">
   <%= submit_tag "Create" , class: 'btn btn-primary' %>
-  <% if flash[:notice] %>
-      <div class="alert alert-warning" role="alert">
-          <%= flash[:notice] %>
-      </div>
-  <% end %>
-  <% if flash[:success] %>
-      <div class="alert alert-success" role="alert">
-          <%= flash[:success] %>
-      </div>
-  <% end %>
 </div>
 <% end %>

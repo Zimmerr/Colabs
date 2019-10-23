@@ -17,11 +17,14 @@ class TasksController < ApplicationController
   end
 
   def create
+        rout = '/project_task?project_id='+params[:project_id]
         @task = Task.new(task_params)
         if @task.save
-            flash[:success] = 'Task cadastrada com sucesso!'
+            flash[:success] = 'Task cadastrada!'
+            redirect_to rout
         else
-            flash[:notice] = "Oops! Houve um erro. Verifique seus dados novamente."
+            flash[:notice] = "Houve um erro. Verifique seus dados novamente."
+            redirect_to rout
        end
   end
 
