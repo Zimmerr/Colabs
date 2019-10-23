@@ -1,4 +1,4 @@
-<div class="text-center" id="membros_projetosos">
+<div class="text-center" id="membros_projeto">
     <br>
     <ul class="list-group ">
     	<% @membros.each do |m| %>
@@ -7,5 +7,5 @@
 				<%= link_to 'remover', rmuser_path(m),  class: "btn  btn-off" %>
 	    <% end %>
 	</ul>
-	<%= link_to 'Novo membro', new_project_user_path(@project) %>
+	<%= link_to 'Novo membro', new_project_user_path() %>
 </div>
