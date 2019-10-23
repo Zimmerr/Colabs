@@ -5,5 +5,6 @@ class Task < ApplicationRecord
   validates :name, presence: true
   validates :desc, presence: true
   validates :project_id, presence: true
+  validates :list_id, presence: true
 
 end
