@@ -34,7 +34,12 @@
           <div class="modal-content"></div>
         </div>
       </div>
-      <span>Has no lists? Create here <%= link_to '', listas_projeto_url(@project.id), class: "btn btn-info fa fa-list fa-1" %></span>
+      <div id="modal-edit" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content"></div>
+        </div>
+      </div>
+      <span>Create lists here <%= link_to '', listas_projeto_url(@project.id), class: "btn btn-info fa fa-list fa-1" %></span>
   </nav>
 	<nav class="navbar board" id="projectname" style="margin-top: 10px; height: 27px;"><%= @project.name %></nav>
 	<div class="lists">
@@ -44,7 +49,10 @@
 			<ul>
         <% list.tasks.each do |task| %>
   		    <li>
-  			    <h6><em><%= task.name %></em></h6>
+            <div style="display: flex;justify-content: space-between;">
+              <h6><em><%= task.name %></em></h6>
+              <h6><%= link_to 'EDIT', edit_task_path(:project_id => @project.id, :list_id => list.id, :id => task.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-edit'} %></h6>
+            </div>
             <br>
   			    <%= task.desc %>
   		    </li>

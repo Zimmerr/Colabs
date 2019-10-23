@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: "auth#login"
   get 'landing', to: 'auth#login'
   get 'new_task', to: 'tasks#new'
+  get 'edit_task', to: 'tasks#edit'
   get 'project_task', to: 'tasks#index'
   get "meus_projetos", to: "projects#index"
   get "cadastrar_usuario", to: "users#new"
