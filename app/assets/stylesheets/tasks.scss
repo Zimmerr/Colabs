@@ -38,13 +38,17 @@ body {
   color: #eee;
 }
 
+.btn-info {
+  font-size: 0.8rem;
+}
+
 .navbar {
   padding-left: $gap;
   display: flex;
   align-items: center;
   &.app {
     background-color: $appbar-bg-color;
-    font-size: 1.5rem;
+    font-size: 1.0rem;
   }
   &.board {
     font-size: 1.1rem;

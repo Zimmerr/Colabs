@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   root to: "auth#login"
   get 'landing', to: 'auth#login'
-  get 'project_tasks', to: 'tasks#tasks'
+  get 'new_task', to: 'tasks#new'
+  get 'edit_task', to: 'tasks#edit'
+  get 'project_task', to: 'tasks#index'
   get "meus_projetos", to: "projects#index"
   get "cadastrar_usuario", to: "users#new"
   get "editar_usuario", to: "users#edit"
@@ -20,4 +22,8 @@ Rails.application.routes.draw do
   resources :auth, only: [:login, :create, :destroy]
 
   resources :projects
+
+  resources :tasks
+
+  resources :lists
 end
