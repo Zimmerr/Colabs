@@ -6,7 +6,7 @@ class ProjectUsersController < ApplicationController
     end
 
     def new
-        @tmembros = User.where('id NOT IN (?)', User.joins(:projects).where(projects: {id: 666}).select('id'))
+        @tmembros = User.where('id NOT IN (?)', User.joins(:projects).where(projects: {id: session[:projectid]}).select('id'))
     end
 
     def create

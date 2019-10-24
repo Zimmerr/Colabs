@@ -4,7 +4,7 @@
     	<% @membros.each do |m| %>
 		    <li class="float-left, background-color: transparent !important userbox">
 				<%= m.nome %>
-				<%= link_to 'remover', rmuser_path(m),  class: "btn  btn-off" %>
+				<%= link_to 'Remover', rmuser_path(m),  class: "btn  btn-danger" %>
 	    <% end %>
 	</ul>
 	<%= link_to 'Novo membro', new_project_user_path() %>
