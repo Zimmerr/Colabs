@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+
   root to: "auth#login"
   get 'landing', to: 'auth#login'
   get 'new_task', to: 'tasks#new'
@@ -11,6 +12,8 @@ Rails.application.routes.draw do
   get "editar_usuario", to: "users#edit"
   get "index", to: "inicial#index"
   get 'enter', to: 'auth#new'
+  post "/addprojectuser/:id", to: "project_users#create", as: "adduser"
+  get "/rmprojectuser/:id", to: "project_users#remove", as: "rmuser"
   post 'enter', to: 'auth#create'
   delete 'logout', to: 'auth#destroy'
 
@@ -26,4 +29,6 @@ Rails.application.routes.draw do
   resources :tasks
 
   resources :lists
+
+  resources :project_users
 end
