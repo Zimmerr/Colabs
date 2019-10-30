@@ -18,6 +18,18 @@ class ListsController < ApplicationController
 	     end
 	end
 
+	def destroy
+		list = List.find(params[:id])
+		if list.isDeletable
+			list.destroy
+			flash[:success] = 'Lista deletada com sucesso!'
+			redirect_to listas_projeto_url(:project_id => list.project_id)
+		else
+			flash[:notice] = "Lista não pode ser deletada pois contém atividades!"
+			redirect_to listas_projeto_url(:project_id => list.project_id)
+		end
+	end
+
 	private
     	def list_params
 		    params.require(:list).permit(:name, :desc)

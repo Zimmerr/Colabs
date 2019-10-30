@@ -24,8 +24,30 @@ FactoryBot.define do
       desc {"A ser Feito"}
       project_id {create(:project).id}
     end
+    
+    factory :list_with_tasks, class: List do
+      after :create do |list|
+        create_list :task, 1, project_id: list.project_id, list_id: list.id   # has_many
+      end
+      name {"xd"}
+      desc {"aaaa"}
+      project_id {create(:project).id}
+    end
   
     factory :invalid_list, class: List do
       desc {"Pendente a ser feito"}
+      project_id {create(:project).id}
+    end
+
+    factory :unlinked_list, class: List do 
+      name {"Doing"}
+      desc {"Sendo Feito"}
+    end
+
+    factory :task, class: Task do 
+      name {"Começar"}
+      desc {"Começar a fazer as coisas"}
+      project_id {create(:project).id}
+      list_id {create(:list).id}
     end
   end

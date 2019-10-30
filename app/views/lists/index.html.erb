@@ -38,6 +38,7 @@
         <tr>
             <td>Nome</td>
             <td>Descrição</td>
+            <td>Número de atividades</td>
         </tr>
     </thead>
     <tbody>
@@ -45,6 +46,10 @@
             <tr>
                 <td><%= list.name %></td>
                 <td><%= list.desc %></td>
+                <td><%= list.tasks.length %></td>
+                <td>
+                    <%= link_to '', list_url(list), method: 'delete', class: "btn btn-danger fa fa-times" %>
+                </td>
             </tr>
         <%end %>
     </tbody>

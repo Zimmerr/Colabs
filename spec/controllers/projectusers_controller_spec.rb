@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe ProjectusersController, type: :controller do
+RSpec.describe ProjectUsersController, type: :controller do
 
 end
