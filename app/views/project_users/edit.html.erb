@@ -4,8 +4,12 @@
     	<% @membros.each do |m| %>
 		    <li class="float-left, background-color: transparent !important userbox">
 				<%= m.nome %>
-				<%= link_to 'Remover', rmuser_path(m),  class: "btn  btn-danger" %>
+        <% if m.id.to_s != params['id'] %>
+				    <%= link_to 'Remover', rmuser_path(m),  class: "btn  btn-danger" %>
+        <% else %>
+            <%= " - Proprietário do Projeto" %>
+        <% end %>
 	    <% end %>
 	</ul>
-	<%= link_to 'Novo membro', new_project_user_path() %>
+	<%= link_to params['id'], new_project_user_path() %>
 </div>
