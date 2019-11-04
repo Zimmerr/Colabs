@@ -1,5 +1,7 @@
 class ProjectUsersController < ApplicationController
 
+  before_action :require_logged_in_user
+
     def edit
         session[:projectid] = params[:id]
         @membros = User.joins(:projects).where(projects: {id: params[:id]})

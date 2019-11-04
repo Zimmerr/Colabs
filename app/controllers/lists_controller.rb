@@ -1,4 +1,7 @@
 class ListsController < ApplicationController
+
+  before_action :require_logged_in_user
+
     def index
 	     @project = Project.find(params[:project_id])
 	     @lists = @project.lists

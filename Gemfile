@@ -51,7 +51,7 @@ group :development, :test do
   # para usar o assign no rspec
   gem 'rails-controller-testing'
   # Cucumber-rails; necessário para rodar o rake features
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', require: false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   # Use sqlite3 as the database for Test Record

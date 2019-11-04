@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
-
-  before_action :index, except: [:new, :create, :edit, :update, :destroy]
+  
+  before_action :require_logged_in_user, :index, except: [:new, :create, :edit, :update, :destroy]
 
   def index
         @tasks = Task.all
