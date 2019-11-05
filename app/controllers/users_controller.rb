@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
 
-	before_action :set_user, only: [:edit, :update]
+	before_action :require_logged_in_user, :set_user, only: [:edit, :update]
 
     def new
       redirect_to index_path if user_signed_in?
       @user = User.new
     end
-	
+
 	def edit
 
 	end
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 		     redirect_to '/cadastrar_usuario'
 	     end
 	end
-	
+
 	#TODO - Teste unitario
 	#TODO - Dar um jeito de deixar o usuario alterar seus dados sem mudar senha, atualmente ele precisa inserir uma nova de ao menos 6 caracteres
 	def update
@@ -41,11 +41,11 @@ class UsersController < ApplicationController
     	def user_params
 		    params.require(:user).permit(:nome, :email, :password, :password_confirmation)
 		end
-		
+
 		def set_user
 			if params[:id]
 				@user = User.find(params[:id])
-			else 
+			else
 				@user = current_user
 			end
 		end

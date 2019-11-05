@@ -20,10 +20,9 @@
               <div class="pull-right">
                 <%-# Ocultei o botão abaixo pois a página de mockup das tasks ainda não tem relevancia alguma%>
                 <%= link_to (fa_icon "list"), listas_projeto_url(:project_id => p.id),  class: "btn btn-info" %>
-                <% link_to (fa_icon "tasks"), 'project_tasks', class: "btn btn-info" %>
 			          <%= link_to (fa_icon "edit"), edit_project_path(p),  class: "btn  btn-info" %>
 			          <%= link_to (fa_icon "users"), edit_project_user_path(p),  class: "btn  btn-info", :title => "Gerenciar Usuários" %>
-                <button class="btn btn-success text-bold" title="Atualizar o Projeto"><i class="fa fa-edit"></i></button>
+                <%= link_to (fa_icon "tasks"), project_task_path(:project_id => p.id), class: "btn btn-success text-bold" %>
               </div>
             </fieldset>
           </div>
