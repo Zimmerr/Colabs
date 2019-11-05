@@ -1,11 +1,31 @@
 <div class="text-center" id="membros_projeto">
-    <br>
+	<br>
+	<h2> Criador </h2>
+	<ul class="list-group ">
+		    <li class="float-left, background-color: transparent !important userbox">
+			<%= @criador %>
+	</ul>
+	<h2> Gerenciadores </h2>
     <ul class="list-group ">
-    	<% @membros.each do |m| %>
+    	<% @membros_gerenciador.each do |m| %>
 		    <li class="float-left, background-color: transparent !important userbox">
 				<%= m.nome %>
-				<%= link_to 'Remover', rmuser_path(m),  class: "btn  btn-danger" %>
+				<% if @level != 0 %>
+					<%= link_to 'Definir como colaborador', changelevel_path(m), class: "btn btn-warning" %>
+					<%= link_to 'Remover', rmuser_path(m),  class: "btn  btn-danger" %>
+				<% end %>
 	    <% end %>
 	</ul>
-	<%= link_to 'Novo membro', new_project_user_path() %>
+	<h2> Colaboradores </h2>
+	<ul class="list-group ">
+    	<% @membros_colaborador.each do |m| %>
+		    <li class="float-left, background-color: transparent !important userbox">
+				<%= m.nome %>
+				<% if @level != 0 %>
+					<%= link_to 'Definir como gerenciador', changelevel_path(m), class: "btn btn-warning" %>
+					<%= link_to 'Remover', rmuser_path(m),  class: "btn  btn-danger" %>
+				<% end %>
+	    <% end %>
+	</ul>
+	<%= link_to 'Novo membro', new_project_user_path(), class: "btn btn-info" %>
 </div>

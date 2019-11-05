@@ -34,13 +34,16 @@ class ProjectsController < ApplicationController
     end
 
 	def create
-		 @project = Project.new(save_project_params)
-		 @project.users << current_user
-	     if @project.save
+		@project = Project.new(save_project_params)
+		@project.users << current_user
+
+		pu = ProjectUser.create(:user_id => current_user, :project_id => @project.id, :level => 2)
+
+	    if @project.save
 		     redirect_to '/meus_projetos'
-	     else
+	    else
 		     redirect_to '/meus_projetos'
-	     end
+	    end
 	end
 
 
