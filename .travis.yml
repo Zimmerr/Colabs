@@ -9,4 +9,5 @@ script:
   - bundle exec rake db:test:prepare
   - bundle exec rake db:seed RAILS_ENV=test --trace
   - bundle exec rake cucumber
+  - rake spec
 
