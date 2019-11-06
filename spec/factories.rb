@@ -14,6 +14,12 @@ FactoryBot.define do
       desc {"Sim"}
     end
 
+    factory :user, class: User do
+      nome {"Zezinho"}
+      email {"zezinho@gmail.com"}
+      password {"123456"}
+    end
+
     factory :invalid_project, class: Project do
       desc {"a"}
     end

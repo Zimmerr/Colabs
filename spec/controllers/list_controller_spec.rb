@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe ListsController, type: :controller do
+  before :each do
+    user = create(:user)
+    login(user)
+  end
+
     describe "GET #index" do
         before :each do
             @project = create(:project)
@@ -13,7 +18,7 @@ RSpec.describe ListsController, type: :controller do
         end
 
         it "renders the :index view" do
-          response.should render_template :indexs
+          response.should render_template :index
         end
     end
 
