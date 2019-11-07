@@ -1,4 +1,8 @@
 FactoryBot.define do
+  factory :post do
+    
+  end
+
   
     factory :project_with_list, class: Project do
       after :create do |project|
