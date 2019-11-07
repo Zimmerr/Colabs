@@ -3,6 +3,7 @@ class CreateProjectUsers < ActiveRecord::Migration[5.2]
     create_table :project_users do |t|
       t.integer :project_id
       t.integer :user_id
+      t.integer :level
 
       t.timestamps
     end

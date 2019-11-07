@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get 'enter', to: 'auth#new'
   post "/addprojectuser/:id", to: "project_users#create", as: "adduser"
   get "/rmprojectuser/:id", to: "project_users#remove", as: "rmuser"
+  get "/change_level/:id", to: "project_users#change_level", as: "changelevel"
+  #get "cl", to: 'project_users#change_level'
   post 'enter', to: 'auth#create'
   delete 'logout', to: 'auth#destroy'
 

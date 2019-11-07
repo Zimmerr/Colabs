@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe ListsController, type: :controller do
+  before :each do
+    user = create(:user)
+    login(user)
+  end
+
     describe "GET #index" do
         before :each do
             @project = create(:project)
@@ -11,7 +16,7 @@ RSpec.describe ListsController, type: :controller do
         it "populates an array of lists" do
           assigns(:lists).should eq(@project.lists)
         end
-        
+
         it "renders the :index view" do
           response.should render_template :index
         end
@@ -26,7 +31,7 @@ RSpec.describe ListsController, type: :controller do
           }.to_not change(List,:count)
         end
       end
-      
+
       context "not containing any tasks" do
         it "does delete the list" do
           l = create(:list)
@@ -34,8 +39,8 @@ RSpec.describe ListsController, type: :controller do
             post :destroy, params: {id: l[:id]}
           }.to change(List,:count).by(-1)
         end
-        
-      end 
+
+      end
     end
 
     describe "POST create" do
@@ -47,7 +52,7 @@ RSpec.describe ListsController, type: :controller do
           }.to change(List,:count).by(1)
         end
       end
-      
+
       context "with invalid attributes" do
         it "does not save the new list" do
           l = attributes_for(:invalid_list)
@@ -55,7 +60,7 @@ RSpec.describe ListsController, type: :controller do
             post :create, params: {list: l, project_id: l[:project_id]}
           }.to_not change(List,:count)
         end
-        
-      end 
+
+      end
     end
 end
