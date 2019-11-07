@@ -1,0 +1,49 @@
+<body >
+  <div>
+    <img src="/assets/colabs3.jpeg" class="img-responsive mx-auto d-block">
+  </div>
+
+
+  <% if @projetos.length > 0 %>
+    <div class="card-columns">
+      <% @projetos.each do |p| %>
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><%=p.name%></h3>
+          </div>
+          <div class="card-body">
+            
+            <p class="card-text"><%= p.desc %></p>
+          </div>
+          <div class="card-footer">
+            <fieldset>
+              <div class="pull-right">
+                <%-# Ocultei o botão abaixo pois a página de mockup das tasks ainda não tem relevancia alguma%>
+                <%= link_to (fa_icon "list"), listas_projeto_url(:project_id => p.id),  class: "btn btn-info" %>
+                <% link_to (fa_icon "tasks"), 'project_tasks', class: "btn btn-info" %>
+			          <%= link_to (fa_icon "edit"), edit_project_path(p),  class: "btn  btn-info" %>
+			          <%= link_to (fa_icon "users"), edit_project_user_path(p),  class: "btn  btn-info", :title => "Gerenciar Usuários" %>
+                <button class="btn btn-success text-bold" title="Atualizar o Projeto"><i class="fa fa-edit"></i></button>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      <%end %>
+    </div>
+
+  <% else %>
+    <div class="login-box shadow">
+      <div class="login-box-body" id="inicial-page">
+
+        <h3 class="text-center">Bem vindo ao Colabs, <%= current_user.nome %>!</h1>
+
+        <p class="text-center">Você ainda não tem projetos cadastrados!</p>
+        <p class="text-center">Você pode cadastrá-los <%= link_to "clicando aqui!", meus_projetos_path, method: :get %> </p>
+        <p class="text-center">Você está logado como <%= current_user.email%>. <%= link_to "Deseja sair?", logout_path, method: :delete %></p>
+
+      </div>
+    </div>
+  <% end %>
+
+  
+</body>
