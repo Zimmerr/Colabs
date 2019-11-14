@@ -7,7 +7,27 @@ class ListsController < ApplicationController
 	     @lists = @project.lists
 	     @list = List.new
 	     @list.project_id = @project.id
-    end
+	end
+	
+	def edit
+		@project = Project.find(params[:project_id])
+		@lists = @project.lists
+		@list = List.find(params[:list_id])
+		@list.project_id = @project.id
+		render 'index'
+		
+	end
+
+	def update
+		@list = List.find(params[:list_id])
+	     if @list.update(list_params)
+         	flash[:success] = 'Lista atualizada com sucesso!'
+		     redirect_to listas_projeto_url(:project_id => @list.project_id)
+	     else
+		     flash[:notice] = "Lista não foi atualizada com sucesso. Preencha os campos corretamente."
+		     redirect_to edit_list_url(:list_id => @list.id, :project_id => @list.project_id)
+	     end
+	end
 
 	def create
 		@list = List.new(list_params)

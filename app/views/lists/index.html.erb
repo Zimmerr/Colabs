@@ -14,7 +14,7 @@
     </div>
 
     <div class="col-md-6 offset-md-3 col-xs-12">
-        <%= form_for :list do |f| %>
+        <%= form_for :list, url: (@list.new_record? ? create_list_url : update_list_url ), method: (@list.new_record? ? :post : :put)  do |f| %>
 
             <div class="form-group">
                 <%= f.label :Nome %>
@@ -26,7 +26,12 @@
                 <%= f.text_field :desc, class:"form-control" %>
             </div>
 
-            <%=f.submit "Criar Lista", class:"col-md-6 offset-md-3 col-xs-12 btn btn-primary" %>
+            <% if @list.id %>
+                <%=f.submit "Atualizar Lista", class:"col-md-6 offset-md-3 col-xs-12 btn btn-success" %>
+                <%=link_to 'Cancelar Atualização', listas_projeto_url(:project_id => @project.id), method: 'get', class:"col-md-6 offset-md-3 col-xs-12 btn btn-danger" %>
+            <% else %>
+                <%=f.submit "Criar Lista", class:"col-md-6 offset-md-3 col-xs-12 btn btn-primary" %>
+            <% end %>
 
         <% end %>
     </div>
@@ -49,6 +54,9 @@
                 <td><%= list.tasks.length %></td>
                 <td>
                     <%= link_to '', list_url(list), method: 'delete', class: "btn btn-danger fa fa-times" %>
+                </td>
+                <td>
+                    <%= link_to '', edit_list_url(:list_id => list.id, :project_id => list.project_id), method: 'get', class: "btn btn-info fa fa-edit" %>
                 </td>
             </tr>
         <%end %>

@@ -21,7 +21,9 @@ Rails.application.routes.draw do
   delete 'logout', to: 'auth#destroy'
 
   get 'listas_projeto/:project_id', to: "lists#index", as: 'listas_projeto'
-  post 'listas_projeto/:project_id', to: "lists#create"
+  post 'listas_projeto/:project_id', to: "lists#create", as: 'create_list'
+  get 'listas_projeto/:project_id/:list_id', to: "lists#edit", as: 'edit_list'
+  put 'listas_projeto/:project_id/:list_id', to: "lists#update", as: 'update_list'
 
   resources :users, only: [:new, :create, :update]
 
