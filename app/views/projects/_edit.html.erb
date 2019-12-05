@@ -22,8 +22,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <%=link_to 'Cancelar Atualização', meus_projetos_url, method: 'get', class:"col-md-2 offset-md-2 col-xs-2 btn btn-danger" %>
         <%= f.submit texto_da_acao, class: 'btn btn-primary' %>
       </div>
       <% end %>
-
