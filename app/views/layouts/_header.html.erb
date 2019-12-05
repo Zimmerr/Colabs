@@ -21,7 +21,7 @@
         </button>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
           <%= link_to "Minha Conta", editar_usuario_path, class:"dropdown-item" %>
-          <%= link_to "Meus Projetos", meus_projetos_path, class:"dropdown-item" %>
+          <%= link_to "Meus Projetos", meus_projetos_path, class:"dropdown-item", id: 'my_project' %>
           <%= link_to "Sair", logout_path, class:"dropdown-item", method: :delete %>
         </div>
       </div>

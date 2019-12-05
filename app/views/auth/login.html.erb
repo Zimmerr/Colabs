@@ -6,6 +6,16 @@
     </div>
 
   <div class="login-box shadow">
+    <% if flash[:success] %>
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <%= flash[:success] %>
+        </div>
+    <% end %>
+    <% if flash[:notice] %>
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <%= flash[:notice] %>
+        </div>
+    <% end %>
     <div class="login-box-body" id ="login-box">
 
       <h1 class="text-center">Login</h1>

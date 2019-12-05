@@ -16,10 +16,10 @@ class UsersController < ApplicationController
 	     @user = User.new(user_params)
 	     if @user.save
          	flash[:success] = 'Usuário cadastrado com sucesso!'
-		     redirect_to root_path
+		     redirect_to root_path, flash: { success: "Usuário cadastrado com sucesso!" }
 	     else
 		     flash[:notice] = "Oops! Houve um erro. Verifique seus dados novamente."
-		     redirect_to '/cadastrar_usuario'
+		     redirect_to '/cadastrar_usuario', flash: { notice: "Oops! Houve um erro. Verifique seus dados novamente." }
 	     end
 	end
 

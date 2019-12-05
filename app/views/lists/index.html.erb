@@ -31,11 +31,12 @@
                 <%=link_to 'Cancelar Atualização', listas_projeto_url(:project_id => @project.id), method: 'get', class:"col-md-6 offset-md-3 col-xs-12 btn btn-danger" %>
             <% else %>
                 <%=f.submit "Criar Lista", class:"col-md-6 offset-md-3 col-xs-12 btn btn-primary" %>
+                <%=link_to 'Voltar ao Board', project_task_url(:project_id => @project.id), method: 'get', class:"col-md-6 offset-md-3 col-xs-12 btn btn-danger" %>
             <% end %>
 
         <% end %>
     </div>
-    
+
 </div>
 
 <table class="table table-bordered table-hover table-margin">
