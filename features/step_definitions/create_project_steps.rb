@@ -3,7 +3,8 @@ Given (/^I am on the main page$/) do
 end
 
 When (/^click on the 'clicando aqui!' link$/) do
-  click_link "clicando aqui!"
+  find('#dropdownMenuButton').click
+  find('a[href="/meus_projetos"]').click
 end
 
 When (/^click on the 'Novo projeto' button$/) do
@@ -27,4 +28,3 @@ end
 Then (/^I should see my projects page$/) do
   expect(page).to have_xpath('.//div[@id="meus_projetos"]')
 end
-
