@@ -4,7 +4,7 @@ end
 
 When (/^click on the 'clicando aqui!' link$/) do
   find('#dropdownMenuButton').click
-  find('a[href="/meus_projetos"]').click
+  find('a[href="/meus_projetos"][class="dropdown-item"][id="my_project"]').click
 end
 
 When (/^click on the 'Novo projeto' button$/) do
